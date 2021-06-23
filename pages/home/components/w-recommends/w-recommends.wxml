@@ -1,0 +1,10 @@
+<view class="recommend" hover-class="none" hover-stop-propagation="false">
+  <block wx:for="{{recommend}}" wx:key="id">
+    <view class="recommend-item" hover-class="none" hover-stop-propagation="false">
+      <image src="{{item.image}}" bind:load="imageLoad" />
+      <text class="" selectable="false" space="false" decode="false">
+        {{item.title}}
+      </text>
+    </view>
+  </block>
+</view>

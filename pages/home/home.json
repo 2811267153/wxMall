@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "w-swiper": "/components/w-swiper/w-swiper",
+    "tab-control": "/components/tab-control/tab-control",
+    "w-recommends": "/pages/home/components/w-recommends/w-recommends",
+    "w-goods": "/components/w-goods/w-goods",
+    "w-block": "/components/w-block/w-block"
+  },
+  "navigationBarTitleText": "购物车"
+}

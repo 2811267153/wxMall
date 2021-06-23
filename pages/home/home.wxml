@@ -1,0 +1,13 @@
+<view class="home" hover-class="none" hover-stop-propagation="false">
+  <w-swiper list="{{banner}}"></w-swiper>
+  <!-- 推荐数据 -->
+  、
+  <w-recommends recommend="{{recommend}}" bind:imageLoad='imageLoad' ></w-recommends>
+  <!-- navbar -->
+  <tab-control title='{{title}}' id="tab-bar" bind:itemClick='itemClick' class="{{isFixed ? 'fixed' : ''}}"></tab-control>
+  <tab-control title='{{title}}' wx:if="{{isFixed}}"></tab-control>
+  <!-- 展示商品数据 -->
+  <w-goods goods='{{goods[currentType].list}}'></w-goods>
+  <!-- 返回顶部按钮 -->
+  <w-block></w-block>
+</view>

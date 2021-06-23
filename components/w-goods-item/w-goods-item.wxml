@@ -1,0 +1,8 @@
+<view class="goods-item" hover-class="none" hover-stop-propagation="false">
+  <image class="" src="{{item.show.img}}" mode="widthFix"></image>
+  <view class="goods-item" hover-class="none" hover-stop-propagation="false">
+    <view class="goods-info" selectable="false" space="false" decode="false">{{item.title}}</view>
+    <text class="" selectable="false" space="false" decode="false">{{item.price}}</text>
+    <text class="cFav" selectable="false" space="false" decode="false">{{item.cfav}}</text>
+  </view>
+</view>

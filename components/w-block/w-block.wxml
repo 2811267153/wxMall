@@ -1,0 +1,4 @@
+<!--components/w-block/w-block.wxml-->
+<view bind:tap="onBlock" class="block" hover-class="" hover-stop-propagation="false" >
+  <image widthFix src="/assise/block.png" />
+</view>
