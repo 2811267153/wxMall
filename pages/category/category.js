@@ -1,11 +1,14 @@
 // pages/category/category.js
-import { getCategoryData } from "../../servise/caregory";
+import { getCategoryData, getSubcategory } from "../../servise/caregory";
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    categoryList: []
+    categoryList: [],
+    index: 0,
+    categoryTagList: [],
+    mailKey: "",
   },
 
   /**
@@ -17,26 +20,38 @@ Page({
   _getCategoryData() {
     getCategoryData().then((res) => {
       console.log(res);
-      const list = res.data.data.category.list
+      const list = res.data.data.category.list;
       this.setData({
-        categoryList: list
-      })
+        categoryList: list,
+      });
     });
   },
-  getIndex(e){
+  getIndex(e) {
     console.log(e);
+    if (arguments.length >= 1) {
+      var index = e.currentTarget.dataset.index;
+    } else {
+      //
+      this.setData({
+        mailKey: this.data.categoryList[this.data.index].maitKey,
+      });
+
+      this._getSubcategory(mailKey);
+    }
+    this.setData({
+      index: index,
+    });
+    const mailKey = this.data.categoryList[this.data.index].maitKey;
+    this._getSubcategory(mailKey);
   },
-
-
-
-
-
-
-
-
-
-
-
+  _getSubcategory(mailKey) {
+    getSubcategory(mailKey).then((res) => {
+      console.log(res);
+      this.setData({
+        categoryTagList: res.data.data.list
+      });
+    });
+  },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
@@ -47,5 +62,4 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {},
-
 });

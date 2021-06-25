@@ -23,7 +23,7 @@ Component({
   methods: {
     currendIndex(e){
       const index = e.currentTarget.dataset.index
-      // console.log(e);
+      console.log(e);
       this.setData({
         currIndex: index
       })

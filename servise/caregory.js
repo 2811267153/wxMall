@@ -6,3 +6,12 @@ export function getCategoryData() {
     url: beastUrl +  'category',
   })
 }
+
+export function getSubcategory(maitKey) {
+  return request({
+    url: beastUrl +  'subcategory',
+    data: {
+      maitKey
+    }
+  })
+}

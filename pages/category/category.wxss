@@ -1,4 +1,7 @@
 /* pages/category/category.wxss */
+.category{
+  display: flex;
+}
 .category-nav{
   width: 30%;
   background-color: #f2f2f2;
@@ -13,4 +16,8 @@
 .category-item text{
   padding-top: 25%;
   color: #ffffff;
+}
+.goods{
+  width: 69%;
+  
 }
