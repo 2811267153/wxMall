@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "swiper": "/components/w-swiper/w-swiper",
+    "w-block": "/components/w-block/w-block"
+  },
+  "navigationBarTitleText": "购物车",
+  "navigationBarTextStyle": "black"
+}

@@ -15,6 +15,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var pages = getCurrentPages(); 
+    var currentPage = pages[pages.length - 1]
+    var url =  currentPage.route 	
+    console.log(url);
     this._getCategoryData();
   },
   _getCategoryData() {
@@ -50,6 +54,7 @@ Page({
       this.setData({
         categoryTagList: res.data.data.list
       });
+      console.log(this.data.categoryTagList);
     });
   },
 

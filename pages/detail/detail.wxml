@@ -1,0 +1,133 @@
+<view class="detail">
+  <!-- pages/detail/detail.wxml -->
+  <swiper class="swiper" list='{{topImg}}'>
+    <swiper-item wx:for="{{list}}" wx:key="item" class="" tem-id="">
+      <image class="" bindload="imgOnLoad" src="{{item}}" mode="widthFix"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 轮播图 -->
+  <!-- 商品详情 -->
+  <view id="shopInfo">
+    <view class="price">
+      <text class="_price">{{itemInfo.price}}</text>
+      <text class="old_price">{{itemInfo.oldPrice}}</text>
+    </view>
+    <view class="fn_wrap" hover-class="none" hover-stop-propagation="false">
+      <text class="icon" hover-class="none" hover-stop-propagation="false">
+        {{itemInfo.discountDesc}}
+      </text>
+      <h2 class="title" hover-class="none" hover-stop-propagation="false">{{itemInfo.title}}</h2>
+      <view class="cFav">收藏</view>
+    </view>
+  </view>
+  <!-- 优惠活动 -->
+  <view class="logistics">
+    <view class="discount">
+      <h2>优惠</h2>
+      <view class="" hover-class="none" hover-stop-propagation="false">
+        <em>满减</em>
+        <block wx:if="{{promotions.length != 0}}">
+          <block wx:for="{{promotions.list}}" wx:key="item">
+            <view class="_discount">{{item}}</view>
+          </block>
+        </block>
+        <block wx:else="{{promotions.length == 0}}">
+          <view>这件宝贝  还没有优惠哦</view>
+        </block>
+      </view>
+    </view>
+    <view class="shopInfo">
+      <h2>送至</h2>
+      <text class="detail_shopInfo">北京市朝阳区三环到四环之间</text>
+      <view class="_shopInfo">
+        <view class="postNotice">
+          <text class="state">现货</text>
+          <text>今天({{timer}})23：00前下单前下单 预计, 明天({{tomorrow}})24:00前送达</text>
+        </view>
+      </view>
+    </view>
+    <!-- 产品相关信息 -->
+    <view class="detail_serve">
+      <h2>支持</h2>
+      <block wx:for="{{columns}}" wx:key="name">
+        <image src="{{item.icon}}"></image>
+        <text class="detail_serve_item">{{item.name}}</text>
+      </block>
+    </view>
+    <!-- 评价 -->
+    <view class="comment">
+      <h2>
+        评论
+        <text>共：{{comment.cRate}}条评价</text>
+      </h2>
+      <block wx:for="{{comment.list}}" wx:key="item">
+        <view class="detail_comment">
+          <view class="_comment">
+            <image src="{{item.user.avatar}}"></image>
+            <view>{{item.user.uname}}</view>
+          </view>
+          <view class="detail_comment_content">
+            <text>{{item.content}}</text>
+            <text class="comment_timer">发表于</text>
+          </view>
+        </view>
+      </block>
+      <button class="button" size="mini">查看全部评价</button>
+    </view>
+  </view>
+  <!-- 店家信息 -->
+  <view class="_shop_info">
+    <view class="shop_info_logo">
+      <image src="{{shopInfo.shopLogo}}"></image>
+      <text>{{shopInfo.name}}</text>
+    </view>
+    <view class="info_tab">
+      <view class="tab_info info_cfac">
+        <view>{{shopInfo.cFans}}</view>
+        <view>粉丝人数</view>
+      </view>
+      <view class="tab_info">
+        <view wx:for="{{shopInfo.score}}" wx:key="item">
+          <view>{{item.name}} : {{item.score}}分</view>
+        </view>
+      </view>
+    </view>
+    <button class="tab_btn" size="mini">关注店铺</button>
+    <button class="tab_btn" size="mini">进入店铺</button>
+  </view>
+  <!-- 尺码建议 -->
+  <view class="goods_info">
+    <view class="info_item">
+      <view class="info_item_name">{{goodsSize.info.key}}</view>
+      <view class="goods_content">
+        <view class="table">
+          <view class="td table" wx:for="{{goodsSize.info.set}}" wx:key="item">{{item.key}}</view>
+        </view>
+        <view class="table">
+          <view class="th table" wx:for="{{goodsSize.info.set}}" wx:key="item">{{item.value}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 商品图片展示 -->
+  <view class="detail_ifo">
+    <block wx:for="{{detailImage}}" wx:key="item">
+      <image src="{{item}}" mode="widthFix" class="detail_info_img">{{item}}</image>
+    </block>
+  </view>
+  <!-- 添加到购物车 -->
+  <view class="cart fixed">
+    <view class="cart_info">
+      <view class=" _detail detail_info_mj">
+        <image mode="widthFix" src="/assise/店家.png"></image>
+        <view>联系店家</view>
+      </view>
+      <view class=" _detail detail_info_dp">
+        <image mode="widthFix" src="/assise/购物车满 (1).png"></image>
+        <view>加入小黄车</view>
+      </view>
+    </view>
+    <view class="detail_indo_gm">立刻购买</view>
+  </view>
+  <w-block class="btn"></w-block>
+</view>

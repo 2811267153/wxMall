@@ -23,7 +23,7 @@ Component({
   methods: {
     imageLoad(){
       this.triggerEvent('imageLoad')
-      console.log('----');
+      // console.log('----');
     }
   }
 })

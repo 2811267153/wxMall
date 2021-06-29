@@ -42,7 +42,7 @@ Page({
 
       const banners = res.data.data.banner.list;
       const recommend = res.data.data.recommend.list;
-      console.log(banners);
+      // console.log(banners);
       this.setData({
         banner: banners,
         recommend: recommend,
@@ -54,7 +54,7 @@ Page({
     //获取页码
     const page = this.data.goods[type].page + 1;
     getGoodsList(type, page).then((res) => {
-      console.log(res);
+      // console.log(res);
       const list = res.data.data.list
       //将数据保存到对应的type的list中
       const oldList = this.data.goods[type].list
@@ -81,7 +81,7 @@ Page({
   },
   imageLoad(){
     wx.createSelectorQuery().select('#tab-bar').boundingClientRect(rect => {
-      console.log(rect, 'aa');
+      // console.log(rect, 'aa');
       this.data.tabScroll = rect.top
     }).exec()
     // console.log('aa');

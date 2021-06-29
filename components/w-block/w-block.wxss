@@ -3,7 +3,7 @@
 .block{
   position: fixed;
   right: 10px;
-  bottom: 80rpx;
+  bottom: 90rpx;
   width: auto;
 }
 .block image{

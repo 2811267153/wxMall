@@ -10,4 +10,4 @@
   <w-goods goods='{{goods[currentType].list}}'></w-goods>
   <!-- 返回顶部按钮 -->
   <w-block></w-block>
-</view>
+</view>```

@@ -3,11 +3,11 @@
   <scroll-view class="category-nav" enable-flex scroll-y>
     <block wx:for="{{categoryList}}" wx:key="id">
       <view class="category-item" bind:tap="getIndex" data-index='{{index}}' selectable="false" space="false" decode="false">
-        <text class="">
-          {{item.title}}
-        </text>
+        <text class="">{{item.title}}</text>
       </view>
     </block>
   </scroll-view>
-  <w-goods goods="{{categoryTagList}}"></w-goods>
+  <scroll-view class="category-items" scroll-y>
+    <w-goods class="goods" goods="{{categoryTagList}}"></w-goods>
+  </scroll-view>
 </view>

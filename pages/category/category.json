@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "w-goods": "/components/w-goods/w-goods"
-  }
+  },
+  "navigationBarTitleText": "分类"
 }

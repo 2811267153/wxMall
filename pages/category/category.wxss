@@ -17,7 +17,9 @@
   padding-top: 25%;
   color: #ffffff;
 }
-.goods{
-  width: 69%;
-  
+.category-items{
+  height: 100vh;
+}
+.goods  {
+  flex: 1;
 }
